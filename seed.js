@@ -19,7 +19,6 @@ const seedRestaurant = [
     location: 'Houston',
     cuisine: 'Indian'
   },
-
   {
     name: 'Madeas',
     location: 'Dallas',
