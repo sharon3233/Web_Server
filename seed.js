@@ -5,59 +5,69 @@ const {Restaurant, Menu, Item} = require('./models/index') //Q: WHY import these
 //Q: What do you think will happen when we 'seed' this file?
 const seedRestaurant = [
   {
-    name: 'AppleBees',
+    name: 'Rosas',
     location: 'Texas',
-    cuisine: 'FastFood'
+    cuisine: 'Mexian'
   },
   {
-    name: 'LittleSheep',
+    name: 'Madeas',
+    location: 'Everman,Tx',
+    cuisine: 'American'
+  },
+  {
+    name: 'Sake Hibachi Sushi',
+    location: 'Arlington,Tx',
+    cuisine: 'Japanese'
+  },
+  {
+    name: 'burgetking',
     location: 'Dallas',
     cuisine: 'Hotpot'
   },
   {
-    name: 'Spice Grill',
-    location: 'Houston',
-    cuisine: 'Indian'
-  },
-  {
-    name: 'Madeas',
+    name: 'MCDS',
     location: 'Dallas',
-    cuisine: 'Soul Food'
-  }
+    cuisine: 'Hotpot'
+  },
 ]
-
 const seedMenu = [
   {
-    title: 'Breakfast'
+    title: 'Breakfast',
+    RestaurantId : 1,
   },
   {
-    title: 'Lunch'
+    title: 'Lunch',
+    RestaurantId : 2,
   },
   {
-    title: 'Dinner'
+    title: 'Dinner',
+    RestaurantId : 3,
   },
 ]
-
 const seedItem = [
   {
-    name: 'bhindi masala',
+    name: 'chicken fried chicken',
+    image: 'someimage.jpg',
+    price: 13.50,
+    vegetarian: false,
+    MenuId : 3,
+  },
+  {
+    name: 'Ceasar Chicken Wrap',
     image: 'someimage.jpg',
     price: 9.50,
-    vegetarian: true
+    vegetarian: false,
+    MenuId : 2,
   },
   {
-    name: 'egusi soup',
+    name: 'Eggless French Toast',
     image: 'someimage.jpg',
-    price: 10.50,
-    vegetarian: false
-  },
-  {
-    name: 'hamburger',
-    image: 'someimage.jpg',
-    price: 6.50,
-    vegetarian: false
+    price: 4.50,
+    vegetarian: true,
+    MenuId : 1,
   }
 ]
+
 
 //Q: Try to decifer the following function.
 //Q: Why are we using async and await?
@@ -80,7 +90,7 @@ seed()
       console.log('Seeding success!')
     })
     .catch(err => {
-      console.error('Oh noes! Something went wrong!')
+      console.error('Oh NO! Something went wrong!')
       console.error(err)
     })
 
